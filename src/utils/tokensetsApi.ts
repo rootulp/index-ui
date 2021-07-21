@@ -2,23 +2,6 @@ import { camelCase } from 'lodash'
 
 const tokensetsUrl = process.env.REACT_APP_TOKENSETS_URL
 
-export const fetchTokenBuySellData = (
-  id: string,
-  isBuyOrder: boolean,
-  requestQuantity: number | string,
-  currencyId: string,
-  activeField: 'set' | 'currency'
-) => {
-  const buyOrSellRoute = isBuyOrder ? 'buy_price' : 'sell_price'
-  const coinOrSetRoute = id.toLowerCase() === 'index' ? 'coins' : 'portfolios'
-  const requestUrl = `${tokensetsUrl}/public/v2/${coinOrSetRoute}/${id}/${buyOrSellRoute}?quantity=${requestQuantity}&currency=${currencyId}&input_type=${activeField}`
-
-  return fetch(requestUrl)
-    .then((response) => response.json())
-    .then((json) => json.buy_price || json.sell_price || {})
-    .catch((error) => console.log(error))
-}
-
 export const fetchSetComponents = (set: string) => {
   const requestUrl = `${tokensetsUrl}/public/v2/portfolios/${set}`
 
@@ -34,23 +17,6 @@ export const fetchSetComponents = (set: string) => {
       } = response
 
       return formatComponents(components)
-    })
-    .catch((error) => console.log(error))
-}
-
-export const fetchHistoricalTokenMarketData = (
-  id: string,
-  baseCurrency = 'usd'
-) => {
-  const requestUrl = `${tokensetsUrl}/v2/fund_historicals/${id}?currency=${baseCurrency}&beta=true&interval=month`
-
-  return fetch(requestUrl)
-    .then((response) => response.json())
-    .then((response) => {
-      const { prices, dates } = response
-      return {
-        prices: prices.map((item: any, index: number) => [dates[index], item]),
-      }
     })
     .catch((error) => console.log(error))
 }
@@ -73,10 +39,10 @@ export const fetchSetComponentsBeta = (set: string) => {
           name,
           symbol,
           address,
-          image
+          image,
         },
       } = response
-      return { 
+      return {
         components: formatComponents(components),
         marketCap,
         id,
