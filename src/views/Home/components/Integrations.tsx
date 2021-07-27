@@ -71,24 +71,22 @@ const Integrations: React.FC = () => (
           </Surface>
         </StyledCardContainer>
 
-      <Spacer />
+        <Spacer />
 
-      <StyledCardContainer>
+        <StyledCardContainer>
           <Surface fill>
             <StyledCardContent>
               <StyledCardIcon src={sushiSwapLogo} />
               <StyledCardTitle>SushiSwap</StyledCardTitle>
               <StyledCardDescription>
-              Earn yield and Lend your DPI on SushiSwap
+                Earn yield and Lend your DPI on SushiSwap
               </StyledCardDescription>
 
               <StyledOutboundLink
                 href='https://app.sushi.com/farm'
                 target='_blank'
               >
-
                 <Spacer />
-
                 View the Pool
               </StyledOutboundLink>
             </StyledCardContent>
@@ -164,7 +162,7 @@ const Integrations: React.FC = () => (
       </StyledCardRow>
 
       <Spacer />
-      
+
       <StyledIntegrationTypeText>Lend & Borrow</StyledIntegrationTypeText>
 
       <StyledCardRow>
@@ -174,7 +172,8 @@ const Integrations: React.FC = () => (
               <StyledCardIcon src='https://index-dao.s3.amazonaws.com/cream.png' />
               <StyledCardTitle>CREAM Finance</StyledCardTitle>
               <StyledCardDescription>
-              Lend your DPI for yield, or borrow DPI to hedge your DeFi exposure.
+                Lend your DPI for yield, or borrow DPI to hedge your DeFi
+                exposure.
               </StyledCardDescription>
 
               <StyledOutboundLink
@@ -195,23 +194,19 @@ const Integrations: React.FC = () => (
               <StyledCardIcon src={sushiSwapLogo} />
               <StyledCardTitle>SushiSwap</StyledCardTitle>
               <StyledCardDescription>
-              Lend or Borrow against your DPI on SushiSwap's Kashi
+                Lend or Borrow against your DPI on SushiSwap's Kashi
               </StyledCardDescription>
 
               <StyledOutboundLink
                 href='https://app.sushi.com/lend'
                 target='_blank'
               >
-
                 <Spacer />
-
                 View Lend & Borrow Rates
               </StyledOutboundLink>
             </StyledCardContent>
           </Surface>
         </StyledFixedCardContainer>
-
-
       </StyledCardRow>
 
       <Spacer />
@@ -422,9 +417,7 @@ const Integrations: React.FC = () => (
               </StyledCardDescription>
 
               <StyledOutboundLink href='https://defipulse.com/' target='_blank'>
-
                 <Spacer />
-
                 Learn more
               </StyledOutboundLink>
             </StyledCardContent>

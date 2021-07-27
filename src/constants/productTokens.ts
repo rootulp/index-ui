@@ -91,7 +91,6 @@ export const productTokensBySymbol = {
   'BED': BedIndex,
 }
 
-
 const indexNames = [
   DefiPulseIndex,
   MetaverseIndex,
