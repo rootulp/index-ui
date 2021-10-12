@@ -17,7 +17,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
     if (ethereum && dpiTokenAddress && mviTokenAddress && bedTokenAddress && eth2xfliTokenAddress && btc2xfliTokenAddress && dataTokenAddress) {
       getSetDetails(ethereum, [dpiTokenAddress, mviTokenAddress, bedTokenAddress, eth2xfliTokenAddress, btc2xfliTokenAddress, dataTokenAddress]).then(result => {
         console.log(result[0])
-        setDpiSetComponents(result[0].positions.map(mapPositionToSetComponent))
+        setDpiSetComponents(result[0].positions.map(convertPositionToSetComponent))
       })
     }
   }, [ethereum])
@@ -31,7 +31,7 @@ const SetComponentsProvider: React.FC = ({ children }) => {
   )
 }
 
-function mapPositionToSetComponent(position: Position): SetComponent {
+function convertPositionToSetComponent(position: Position): SetComponent {
   return {
     address: position.component,
     quantity: new BigNumber(position.unit.toString()).div(new BigNumber(10).pow(18)).toString()

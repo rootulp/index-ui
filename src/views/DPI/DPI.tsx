@@ -26,7 +26,7 @@ const DpiProductPage = (props: { title: string }) => {
   const { dpiBalance } = useBalances()
   const { dpiStreamingFee } = useStreamingFee()
   const { dpiTotalSupply } = useTokenSupply()
-  const { dpiSetComponents } = useSetComponents()
+  const { dpiSetComponents: setComponents } = useSetComponents()
 
   const token: ProductToken = {
     ...DefiPulseIndex,
@@ -40,7 +40,7 @@ const DpiProductPage = (props: { title: string }) => {
     latestVolume: latestVolume,
     token: token,
     components: components,
-    setComponents: dpiSetComponents,
+    setComponents: setComponents,
     balance: dpiBalance,
     currentSupply: dpiTotalSupply,
   }

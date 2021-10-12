@@ -35,7 +35,7 @@ export interface TokenDataProps {
   /**
    * setComponents is a subset of information in components. If provided, it
    * will be used to populate the index token allocation table. If undefined,
-   * components will be used.
+   * components will be used instead.
    */
   setComponents?: SetComponent[]
   balance: BigNumber | undefined
@@ -105,7 +105,7 @@ const ProductDataUI: React.FC<ProductDataUIProps> = ({
             hourlyPrices={tokenData.hourlyPrices}
           />
           {tokenData.components && (
-            <IndexComponentsTable components={tokenData.components} />
+            <IndexComponentsTable indexComponents={tokenData.components} setComponents={tokenData.setComponents}/>
           )}
           <Description>{children}</Description>
         </ProductPageContent>
