@@ -4,9 +4,16 @@ import numeral from 'numeral'
 
 import { ProductPageSection } from './ProductPageLayouts'
 import IndexComponent from 'components/IndexComponent'
+import { SetComponent } from "../../contexts/SetComponents/SetComponent"
 
 interface ProductIndexComponentsProps {
   components?: IndexComponent[]
+  /**
+   * setComponents is a subset of information in components. If provided, it
+   * will be used to populate the index token allocation table. If undefined,
+   * components will be used.
+   */
+  setComponents?: SetComponent[]
 }
 
 const ProductIndexComponentsTable: React.FC<ProductIndexComponentsProps> = ({

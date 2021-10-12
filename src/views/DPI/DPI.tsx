@@ -13,7 +13,7 @@ import ProductDataUI, {
 } from 'components/ProductPage/ProductDataUI'
 import useStreamingFee from 'hooks/useStreamingFee'
 import useTokenSupply from 'hooks/useTokenSupply'
-import useIndexComponents from "../../hooks/useIndexComponents"
+import useSetComponents from "hooks/useSetComponents"
 
 const DpiProductPage = (props: { title: string }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const DpiProductPage = (props: { title: string }) => {
   const { dpiBalance } = useBalances()
   const { dpiStreamingFee } = useStreamingFee()
   const { dpiTotalSupply } = useTokenSupply()
-  const { dpiComponents } = useIndexComponents()
+  const { dpiSetComponents } = useSetComponents()
 
   const token: ProductToken = {
     ...DefiPulseIndex,
@@ -40,6 +40,7 @@ const DpiProductPage = (props: { title: string }) => {
     latestVolume: latestVolume,
     token: token,
     components: components,
+    setComponents: dpiSetComponents,
     balance: dpiBalance,
     currentSupply: dpiTotalSupply,
   }
