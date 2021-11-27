@@ -142,6 +142,9 @@ const SetComponentsProvider: React.FC = ({ children }) => {
         Promise.all(dataPositions)
           .then(sortPositionsByPercentOfSet)
           .then(setDataComponents)
+      }).catch((e) => {
+        console.log("error in gettingSetDetails")
+        console.error(e);
       })
     }
   }, [

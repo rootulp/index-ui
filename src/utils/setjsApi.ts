@@ -67,6 +67,7 @@ export async function getSetDetails(web3Provider: provider, productAddresses: st
     debtIssuanceModuleAddress,
   ];
 
+  console.log('About to batchFetchSetDetailsAsync')
   return set.setToken.batchFetchSetDetailsAsync(productAddresses, moduleAddresses);
 }
 
@@ -100,5 +101,6 @@ function getSet(web3Provider: provider): Set {
     tradeModuleAddress: tradeModuleAddress,
     governanceModuleAddress: governanceModuleAddress,
     debtIssuanceModuleAddress: debtIssuanceModuleAddress,
+    debtIssuanceModuleV2Address: debtIssuanceModuleAddress, // TODO populate with real value
   })
 }
